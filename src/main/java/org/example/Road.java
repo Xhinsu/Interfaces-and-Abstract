@@ -1,8 +1,10 @@
 package org.example;
 
-public class Road extends Environment<Vehicle>{
+public class Road extends Environment<Drive>{
     @Override
     public void checkTraffic() {
-        System.out.println(this.getClass().getSimpleName() + " is flying!");
+        for(Drive item: traffic){
+            item.drive();
+        };
     }
 }

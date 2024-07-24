@@ -30,12 +30,36 @@ public class Main {
 //
 //        }
 
+
+
         Sky sky = new Sky();
         sky.addTraffic(new Duck());
         sky.addTraffic(new Pigeon());
         sky.addTraffic(new Aeroplane());
 
-        sky.checkTraffic();
+        Water water = new Water();
+        water.addTraffic(new Duck());
+        water.addTraffic(new Fish());
+
+        Road road = new Road();
+        road.addTraffic(new Car());
+        road.addTraffic(new Aeroplane());
+//        road.addTraffic(new Lorry());
+
+        //type Environment, environments is reference
+        //Environment type object is being stored in list
+        List<Environment<?>> environments = List.of(sky, water, road);
+
+        for (Environment<?> environment: environments) {
+            //i.e sky.checkTraffic() which loops through traffic<T>
+//            environment.checkTraffic();
+            environment.checkVehicles();
+        }
+
+
+
+
+
 
 
     }
